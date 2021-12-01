@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+
+        .kotak{
+            margin: 50px auto;
+            height: 200px;
+            width: 200px;
+            background-color: lightblue;
+        }
+
+        .kotak h1{
+            margin: auto;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+        }
+        p{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kotak">
+        <h1 class="tulisan">Hello World</h1>
+    </div>
+
+    <h1>This page for learning javascript</h1>
+    <button class="myclass">Click Me</button>
+    <p class="mytest">Hello Guys</p>
+
+    <form action="">
+        <input type="password" id="oldpass" placeholder="Old Pass"><br>
+        <input type="password" id="newpass" placeholder="New Pass"><br>
+        <input type="password" id="conpass" placeholder="Confirm Pass"><br>
+        <button type="submit" onclick="return really()">Hello</button>
+    </form><br>
+
+        <h4>Kira cube and total dua cuba A dgn B</h4>
+        <input type="number" id="a" placeholder="insert number value A"><br>
+        <input type="number" id="b" placeholder="insert number value B"><br>
+        <input type="number" id="t" readonly><br>
+        <button type="submit" onclick="calculate()">Calculate</button>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+
+    function calculate(){
+        var a = document.getElementById('a').value,
+            b = document.getElementById('b').value;
+
+        document.getElementById('t').value = twocube(a,b);
+    }
+
+    $('.myclass').dblclick( function() { $('p').css("opacity", "0") })
+    $('.myclass').click( function() { $('p').css("opacity", "1") })
+    // $('.myclass').click( function() { $('p').html("Mantap Guys") })
+
+    function really(){
+        var x = document.getElementById('oldpass').value,
+            y = document.getElementById('newpass').value,
+            z = document.getElementById('conpass').value;
+
+        if (x == "" && y == "" && z == ""){
+            alert("Please Fill All those field");
+        }else if(x == "" && y == ""){
+            alert("Insert Old Pass and New Pass");
+        }else if(x == "" && z == ""){
+            alert("Insert Old Pass and Confirm Pass");
+        }else if(z == "" && y == ""){
+            alert("Insert New Pass and Confirm Pass");
+        }else if(x == ""){
+            alert("Insert Old Pass");
+        }else if(y ==""){
+            alert("Insert New Pass");
+        }else if(z == ""){
+            alert("Insert Confirm Pass");
+        }else if(y !== z){
+            alert("New and Confirm Pass not equal");
+        }else{
+            alert("Password change success");
+        }
+    }
+</script>
+</body>
+</html>
